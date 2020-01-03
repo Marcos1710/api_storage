@@ -1,0 +1,32 @@
+{
+  "name": "api_storage",
+  "version": "1.0.0",
+  "description": "API para se comunicar a uma máquina storage onde irá realizar o I/O de imagens",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "production": "pm2 start index.js --name api_storage",
+    "restart": "pm2 restart api_storage",
+    "stop": "pm2 stop api_storage"
+  },
+  "keywords": [],
+  "author": "Marcos Santos",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.19.0",
+    "body-parser": "1.19.0",
+    "consign": "0.1.6",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "jsonwebtoken": "8.5.1",
+    "multer": "^1.4.2",
+    "passport": "0.4.1",
+    "passport-jwt": "4.0.0",
+    "path": "0.12.7",
+    "pg": "7.17.0",
+    "pm2": "4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.2"
+  }
+}
