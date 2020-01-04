@@ -9,7 +9,16 @@ module.exports = app => {
     let token = null
     if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
       token = req.headers.authorization.split(' ')[1]
+    } else {
+      return { message: 'Token não encontrado' }
     }
+
+    jwt.verify(token, authSecret, function(err) {
+      if (err) {
+        console.log({ message: 'Erro, token não identificado' })
+        return { message: 'Erro, token não identificado' }
+      }
+    })
 
     let decode = jwt.decode(token, authSecret)
     
