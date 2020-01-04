@@ -1,7 +1,6 @@
 const app = require('express')() 
 const consign = require('consign')
 const multer = require('multer')
-
 const uploadConfig = require('../config/upload')
 const upload = multer(uploadConfig)
 

@@ -1,5 +1,5 @@
 # api_storage
-API para se comunicar com um storage e salvar imagens feita em express
+API para se comunicar com um storage e salvar imagens, feito em express,
 ela funciona em conjunto com duas outras APIs que devem estar em funcionamento 
 
 # Instalação inicial ao clonar a API

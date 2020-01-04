@@ -4,11 +4,11 @@ const jwt = require('jsonwebtoken')
 module.exports = app => {
 
   // metodo para decodificar o token que será usado pelo multer no arquivo de upload
-  const index = (req, res) => {
-
+  const index = (headers) => {
     let token = null
-    if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
-      token = req.headers.authorization.split(' ')[1]
+
+    if (headers.authorization && headers.authorization.split(' ')[0] === 'Bearer') {
+      token = headers.authorization.split(' ')[1]
     } else {
       return { message: 'Token não encontrado' }
     }
@@ -23,11 +23,12 @@ module.exports = app => {
     let decode = jwt.decode(token, authSecret)
     
     if (decode) {
-      return res.status(200).json(decode)
+      console.log({ message: 'Token decodificado' })
+      return decode
     } 
 
     console.log({ message: 'Não foi possível decodificar o token' })
-    return res.status(400).json({ message: 'Não foi possível decodificar o token' })
+    return { message: 'Não foi possível decodificar o token' }
   }
 
   return {
