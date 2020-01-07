@@ -10,7 +10,7 @@ module.exports  = {
     destination: (req, file, cb) => {
       let token = null
       let name = ''
-      let pathDir = path.resolve(__dirname,  '..', '..', '..', '..', '..', '..', 'storage_fd')
+      let pathDir = path.resolve(__dirname, '..', '..', '..', 'storage_fd')
       let pathSistema = 'ficha_digital' // futuramente ver uma forma dessa informação pegar do token 
       let dateAtual = moment().format('YYYY-MM-DD')
 

@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "production": "pm2 start index.js --name api_storage",
+    "production": "pm2 start src/index.js --name api_storage",
     "restart": "pm2 restart api_storage",
     "stop": "pm2 stop api_storage"
   },
