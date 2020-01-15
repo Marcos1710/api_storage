@@ -2,9 +2,12 @@ const app = require('express')()
 const consign = require('consign')
 const multer = require('multer')
 const uploadConfig = require('../config/upload')
+const uploadConfigPdfLogo = require('../config/uploadPdfLogo')
 const upload = multer(uploadConfig)
+const uploadPdfLogo = multer(uploadConfigPdfLogo)
 
 app.upload = upload
+app.uploadPdfLogo = uploadPdfLogo
 
 consign()
   .include('./config/passport.js')
