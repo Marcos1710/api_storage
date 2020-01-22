@@ -4,7 +4,7 @@ module.exports = app => {
   const store = async (req, res) => {
     
     let img_assinatura  = req.file
-    let caminho = 'https://st4-hfgtdg124cvt.economysoftware.com.br/' + img_assinatura.path.substr(14)
+    let caminho = 'link_url/' + img_assinatura.path.substr(14)
     
     console.log({ message: 'Imagem da assinatura salva no storage' })
     return res.status(200).json({ name: caminho})
